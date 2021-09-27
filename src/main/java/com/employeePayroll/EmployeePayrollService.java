@@ -12,7 +12,7 @@ public class EmployeePayrollService {
 
 	private List<EmployeePayrollData> employeePayrollList;
 
-	EmployeePayrollService(List<EmployeePayrollData> employeePayrollList) {
+	public EmployeePayrollService(List<EmployeePayrollData> employeePayrollList) {
 		this.employeePayrollList = employeePayrollList;
 	}
 
@@ -37,7 +37,7 @@ public class EmployeePayrollService {
 		employeePayrollList.add(new EmployeePayrollData(id, name, salary));
 	}
 
-	private void writeEmployeePayrollData(IOService ioService) {
+	public void writeEmployeePayrollData(IOService ioService) {
 		if (ioService.equals(IOService.CONSOLE_IO)) {
 			System.out.println("\nWriting Employee Payroll roaster to console\n" + employeePayrollList);
 		} else if (ioService.equals(IOService.FILE_IO)) {
